@@ -15,7 +15,7 @@ export const SocketContextProvider = ({ children }) => {
 
     useEffect(() => {
         if (authUser) {
-            const socketUrl = process.env.NODE_ENV === 'development' ? "http://localhost:5000" : "https://chat-app-x4fw.onrender.com"; // Modify this line according to your production URL
+            const socketUrl = process.env.SOCKET_ENV; // Modify this line according to your production URL
             const socket = io(socketUrl, {
                 query: {
                     userId: authUser._id,
